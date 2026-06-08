@@ -1,13 +1,16 @@
-/*Dette er designet med hjelp av KI*/
+/*Denne koden er skrevet i samarbeid med KI*/
 :root {
     --primary: #006D77;
     --secondary: #83C5BE;
-    --background: #EDF6F9;
-    --surface: #FFDDD2;
+
+    --background: #e7e8e8;
+    --surface: #FFFFFF;
+
     --accent: #E29578;
 
-    --text: #1f2937;
+    --text: #111827;
     --white: #ffffff;
+    --muted: #6B7280;
 
     --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
@@ -25,7 +28,9 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+/* =========================
+    HEADER
+========================= */
 
 header {
     background: var(--primary);
@@ -48,6 +53,9 @@ header {
 .logo-container h1 {
     color: white;
     font-size: 1.8rem;
+}
+
+.logo-container a{
     text-decoration: none;
 }
 
@@ -92,7 +100,9 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* FOOTER */
+/* =========================
+    FOOTER
+========================= */
 
 footer {
     margin-top: 4rem;
@@ -124,6 +134,115 @@ footer a {
 
 footer a:hover {
     opacity: .8;
+}
+
+
+/* =========================
+   MODAL (BACKGROUND)
+========================= */
+
+.modal {
+    display: none; /* hidden by default */
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+
+.modal-content {
+    background: var(--white);
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 2rem;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+    padding: 0.7rem;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+/* =========================
+   MODAL BUTTONS
+========================= */
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-buttons button {
+    flex: 1;
+
+    border: none;
+    padding: 0.8rem;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+/* save button */
+.modal-buttons button[type="submit"] {
+    background: var(--primary);
+    color: white;
+}
+
+/* close button */
+#closeModalBtn {
+    background: #ddd;
+    color: var(--text);
+}
+
+#closeModalBtn:hover {
+    background: #ccc;
 }
 
 /* RESPONSIVE */

@@ -11,7 +11,7 @@ CREATE TABLE users (
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
 
-    user_id INT NOT NULL,
+    user_id INT,
 
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,

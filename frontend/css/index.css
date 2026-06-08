@@ -1,4 +1,4 @@
-
+/*Denne koden er skrevet i samarbeid med KI*/
 /* HERO */
 
 .hero {
@@ -42,7 +42,7 @@
     color: var(--white);
 
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
 
     border-radius: 14px;
@@ -182,6 +182,8 @@
     box-shadow: var(--shadow);
 
     transition: all .25s ease;
+
+    line-height: 30px;
 }
 
 .book-card:hover {

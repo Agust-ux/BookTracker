@@ -1,3 +1,5 @@
+<!--Dette er landingssiden-->
+<!--UI designet ved hjelp av KI-->
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -27,49 +29,83 @@
         <section class="hero">
             <h2>Hold oversikt over lesingen din</h2>
 
-            <p>Du har lest 12 bøker i år</p>
-            <p>Gjennomsnittlig rating: 4.3 ⭐</p>
-
             <div class="hero-buttons">
-                <a href="book_info.html">Mine bøker</a>
-                <a>Legg til bok</a>
+                <a href="mine_boker.html">Mine bøker</a>
+                <a href="#" id="openIndexModal">Legg til bok</a>
             </div>
         </section>
 
-        <section class="stats">
-            <div class="stat-card">
-                <h3>24</h3>
-                <p>Totalt bøker</p>
-            </div>
+            <section class="stats">
 
-            <div class="stat-card">
-                <h3>4.3</h3>
-                <p>Gjennomsnittlig rating</p>
-            </div>
+                <div class="stat-card">
+                    <h3 id="totalBooks">0</h3>
+                    <p>Totalt bøker</p>
+                </div>
 
-            <div class="stat-card">
-                <h3>2</h3>
-                <p>Leser nå</p>
-            </div>
-        </section>
+                <div class="stat-card">
+                    <h3 id="avgRating">0</h3>
+                    <p>Gjennomsnittlig rating</p>
+                </div>
 
-        <section class="recent-books">
-            <h2>Siste registrerte bøker</h2>
+                <div class="stat-card">
+                    <h3 id="readingNow">0</h3>
+                    <p>Leser nå</p>
+                </div>
 
-            <div class="book-card">
-                Dune ★★★★★
-            </div>
+            </section>
 
-            <div class="book-card">
-                Harry Potter ★★★★☆
-            </div>
+            <section class="recent-books">
+                <h2>Siste registrerte bøker</h2>
 
-            <div class="book-card">
-                The Hobbit ★★★★★
-            </div>
-        </section>
+                <div id="recentBooks"></div>
+            </section>
 
     </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="indexModal">
+
+        <div class="modal-content">
+
+            <h2>Legg til ny bok</h2>
+
+            <form id="indexBookForm">
+
+                <label for="title">Boktittel</label>
+                <input type="text" id="title" required>
+
+                <label for="author">Forfatter</label>
+                <input type="text" id="author" required>
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="want_to_read">Vil lese</option>
+                    <option value="reading">Leser</option>
+                    <option value="finished">Har lest</option>
+                </select>
+
+                <label for="rating">Vurdering</label>
+                <select id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="review">Review</label>
+                <textarea id="review" rows="4"></textarea>
+
+                <div class="modal-buttons">
+                    <button type="submit">Lagre</button>
+                    <button type="button" id="closeIndexModal">Lukk</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
     <footer>
         <p>&copy; 2026 BookTracker</p>
@@ -79,5 +115,6 @@
         </div>
     </footer>
 
+    <script src="js/index.js"></script>
 </body>
 </html>
