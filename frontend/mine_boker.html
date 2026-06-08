@@ -42,49 +42,53 @@
     </main>
 
     <!-- MODAL -->
-    <div class="modal" id="bookModal">
+<div class="modal" id="bookModal">
 
-        <div class="modal-content">
+    <div class="modal-content">
 
-            <h2>Legg til ny bok</h2>
+        <h2 id="modalTitle">Legg til ny bok</h2>
 
-            <form id="bookForm">
+        <form id="bookForm">
 
-                <label for="title">Boktittel</label>
-                <input type="text" id="title" required>
+            <!-- IMPORTANT: used for EDIT mode -->
+            <input type="hidden" id="bookId">
 
-                <label for="author">Forfatter</label>
-                <input type="text" id="author" required>
+            <label for="title">Boktittel</label>
+            <input type="text" id="title" required>
 
-                <label for="status">Status</label>
-                <select id="status">
-                    <option value="want_to_read">Vil lese</option>
-                    <option value="reading">Leser</option>
-                    <option value="finished">Har lest</option>
-                </select>
+            <label for="author">Forfatter</label>
+            <input type="text" id="author" required>
 
-                <label for="rating">Vurdering</label>
-                <select id="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+            <label for="status">Status</label>
+            <select id="status" required>
+                <option value="want_to_read">Vil lese</option>
+                <option value="reading">Leser</option>
+                <option value="finished">Har lest</option>
+            </select>
 
-                <label for="review">Review</label>
-                <textarea id="review" rows="4"></textarea>
+            <label for="rating">Vurdering</label>
+            <select id="rating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
 
-                <div class="modal-buttons">
-                    <button type="submit">Lagre</button>
-                    <button type="button" id="closeModalBtn">Lukk</button>
-                </div>
+            <label for="review">Review</label>
+            <textarea id="review" rows="4" placeholder="Skriv din vurdering..."></textarea>
 
-            </form>
+            <div class="modal-buttons">
+                <button type="submit" id="saveBtn">Lagre</button>
+                <button type="button" id="closeModalBtn">Lukk</button>
+            </div>
 
-        </div>
+        </form>
 
     </div>
+
+</div>
 
     <!-- FOOTER -->
     <footer>
