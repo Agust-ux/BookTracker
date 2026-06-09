@@ -26,6 +26,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     min-height: 100vh;
+    padding-bottom: 100px;
 }
 
 /* =========================
@@ -123,6 +124,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 99999999;
 }
 
 footer a {
@@ -136,6 +138,9 @@ footer a:hover {
     opacity: .8;
 }
 
+footer p{
+    color: white;
+}
 
 /* =========================
    MODAL (BACKGROUND)

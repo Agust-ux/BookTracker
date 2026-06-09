@@ -1,6 +1,6 @@
 // Based on Express + MariaDB setup pattern from tutorial, adapted for project architecture
 // https://www.youtube.com/watch?v=Hej48pi_lOc 
-//Bruk av KI til kommentarene og matte formler
+//Bruk av KI til kommentarene og matte formler (/stats)
 
 // =========================
 // SERVER SETUP
@@ -155,6 +155,76 @@ app.get("/stats", async (req, res) => {
         if (conn) conn.release();
     }
 });
+
+// =========================
+// UPDATE BOOKS
+// =========================
+    app.patch("/books/:id", async (req, res) => {
+        let conn;
+
+        try {
+            const id = req.params.id;
+            const { title, author, status, rating, review } = req.body;
+
+            conn = await pool.getConnection();
+
+            await conn.query(
+                `UPDATE books
+                SET title = ?,
+                    author = ?,
+                    status = ?,
+                    rating = ?,
+                    review = ?
+                WHERE id = ?`,
+                [title, author, status, rating, review, id]
+            );
+
+            res.json({ message: "Updated" });
+
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ error: err.message });
+
+        } finally {
+            if (conn) conn.release();
+        }
+    });
+
+// =========================
+// DELETE BOOKS
+// =========================
+    app.delete("/books/:id", async (req, res) => {
+
+        let conn;
+
+        try {
+
+            conn = await pool.getConnection();
+
+            await conn.query(
+                "DELETE FROM books WHERE id = ?",
+                [req.params.id]
+            );
+
+            res.json({
+                message: "Book deleted"
+            });
+
+        } catch (err) {
+
+            console.error(err);
+
+            res.status(500).json({
+                error: "Database error"
+            });
+
+        } finally {
+
+            if (conn) conn.release();
+
+        }
+
+    });
 
 // =========================
 // START SERVER

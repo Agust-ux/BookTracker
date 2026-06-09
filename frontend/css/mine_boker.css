@@ -90,6 +90,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    position: relative;
 }
 
 .book-card:hover {
@@ -103,6 +104,91 @@ main {
 
 .book-card p {
     font-size: 0.95rem;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-wrapper {
+    position: relative;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    top: 30px;
+
+    background: var(--color3);
+    border-radius: 14px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 160px;
+
+    overflow: hidden;
+}
+
+.menu-item {
+    padding: 10px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+    z-index: 100000;
+    background-color: white;
+}
+
+.menu-item:hover {
+    background: #e0e0e0;
+}
+
+.menu-item.delete {
+    color: #8b0000;
+}
+
+.menu-item.delete:hover {
+    background: #ffebeb;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    background: none;
+    border: none;
+
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    color: var(--muted);
+
+    transition: .2s ease;
+    z-index: 10000;
+}
+
+.menu-btn:hover {
+    color: var(--text);
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
 }
 /* =========================
    STATUS BADGES
@@ -121,8 +207,8 @@ main {
 /* status colors (tilpasset paletten din) */
 
 .status-want {
-    background: rgba(131, 197, 190, 0.25);
-    color: var(--primary);
+    background: #9e9e9e7d;
+    color: var(--text);
 }
 
 .status-reading {
@@ -131,7 +217,7 @@ main {
 }
 
 .status-finished {
-    background: rgba(0, 109, 119, 0.15);
+    background: #006d7726;
     color: var(--primary);
 }
 
@@ -151,6 +237,7 @@ main {
     align-items: center;
 
     padding: 1rem;
+    z-index: 100000;
 }
 
 /* =========================
