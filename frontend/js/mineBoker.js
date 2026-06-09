@@ -68,6 +68,7 @@ async function loadBooks() {
                 </span>
             `;
             console.log(book.status, statusClass);
+            card.style.cursor = "pointer";
 
             card.querySelector(".menu-btn").addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -107,17 +108,40 @@ async function loadBooks() {
                 }
 
             });
-            booksGrid.appendChild(card);
+            card.addEventListener("click", () => {
 
+            document.getElementById("infoTitle").textContent =
+                book.title;
+
+            document.getElementById("infoAuthor").textContent =
+                book.author;
+
+            document.getElementById("infoStatus").textContent =
+                statusText;
+
+            document.getElementById("infoRating").textContent =
+                `${book.rating} `;
+
+            document.getElementById("infoReview").textContent =
+                book.review || "Ingen review skrevet.";
+
+            document.getElementById("infoModal").style.display =
+                "flex";
+
+        });
+            booksGrid.appendChild(card);
         });
 
     } catch (error) {
         console.error(error);
     }
-
 }
 
 loadBooks();
+
+document.getElementById("closeInfoModal").onclick = () => {
+    document.getElementById("infoModal").style.display = "none";
+};
 
 function openEditModal(book) {
 

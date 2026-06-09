@@ -348,6 +348,105 @@ textarea:focus {
 }
 
 /* =========================
+   BOOK INFO MODAL
+========================= */
+
+#infoModal .modal-content {
+    max-width: 550px;
+}
+
+#infoTitle {
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+
+    color: var(--primary);
+
+    line-height: 1.2;
+}
+
+/* Info rows */
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.8rem 0;
+
+    border-bottom: 1px solid #ececec;
+}
+
+.info-row strong {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* Author / status / rating text */
+
+#infoAuthor,
+#infoStatus,
+#infoRating {
+    font-weight: 600;
+}
+
+/* Review section */
+
+.review-section {
+    margin-top: 1.5rem;
+}
+
+.review-section strong {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    color: var(--muted);
+}
+
+#infoReview {
+    background: #f5f5f5;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+
+
+    min-height: 80px;
+
+    line-height: 1.6;
+}
+
+/* Close button */
+
+#closeInfoModal {
+    margin-top: 1.5rem;
+
+    width: 100%;
+
+    border: none;
+
+    background: var(--primary);
+    color: white;
+
+    padding: 0.9rem;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#closeInfoModal:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 

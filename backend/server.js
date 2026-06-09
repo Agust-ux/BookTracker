@@ -67,7 +67,7 @@ app.get("/books", async (req, res) => {
         conn = await pool.getConnection();
 
         const books = await conn.query(`
-            SELECT id, title, author, status
+            SELECT id, title, author, status, rating, review
             FROM books
             ORDER BY created_at DESC
         `);
